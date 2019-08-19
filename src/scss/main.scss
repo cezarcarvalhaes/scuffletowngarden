@@ -1,0 +1,132 @@
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
+
+@font-face {
+   font-family: "Acme-Gothic-Wide-Bold";
+   src: url("../fonts/Acme-Gothic-Wide-Bold.otf");
+}
+@font-face {
+   font-family: "Acme-Gothic-Wide";
+   src: url("../fonts/Acme-Gothic-Wide.otf");
+}
+@font-face {
+   font-family: "MrsEavBol";
+   src: url("../fonts/MrsEavBol");
+}
+@font-face {
+   font-family: "MrsEavesRoman";
+   src: url("../fonts/MrsEavesRoman");
+}
+
+/**** Color Pallette ****/
+$darkGreen: #2b463e;
+$offwhite: #f4ecd8;
+$black: #000000;
+$tan: #eece99;
+$brown: #a37f43;
+$coral: #d4784d;
+$green: #5d8138;
+
+body {
+   font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+   font-family: 'Acme-Gothic-Wide';
+}
+
+h2 {
+   font-family: 'MrsEavBol';
+}
+
+footer {
+   background-color: $offwhite !important;
+	color: $black;
+	padding-top: 30px;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+/**** Backgrounds ****/
+.bg-offwhite {
+   background: $offwhite;
+}
+.bg-black {
+   background: $black;
+}
+
+/**** color ****/
+.offwhite {
+   color: $offwhite
+}
+
+/**** Links ****/
+.link-black {
+   color:$black
+}
+.link-black:hover {
+   color:$coral
+}
+.link-white {
+   color: $offwhite
+}
+.link-white:hover {
+   color: $coral;
+}
+.link-primary {
+   color: $darkGreen
+}
+.link-primary:hover {
+   color: $coral;
+}
+
+
+/**** MOBILE MENU ****/
+.slide-in {
+   animation: slide-in 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+ }
+ @keyframes slide-in {
+   from {
+     left: -100%;
+   }
+ 
+   to {
+     left: 0;
+   }
+ }
+ 
+ .slide-out {
+   animation: slide-out 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+ }
+ @keyframes slide-out {
+   to {
+     left: -100%;
+   }
+ 
+   from {
+     left: 0;
+   }
+ }
+ 
+ #mobile-menu {
+   top: 0;
+   width: 100%;
+   overflow-y: auto;
+   z-index: 2000;
+   position: fixed;
+   left: -100%;
+   display: block;
+   height: 100%;
+   background: $black;
+   color: $offwhite;
+ }
+
+ #main-mobile-nav a {
+   color: $offwhite;
+   margin-top: 1em;
+   font-size: 1.5em;
+   text-transform: uppercase;
+ }
+ 
