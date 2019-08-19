@@ -33,21 +33,7 @@ const IndexPage = (props) => {
           </div>
         </div>
       </section>
-      {/* <section id="reservation" className="bg-offwhite my-3 py-5">
-        <h2 className="text-center">Make a Reservation</h2>
-        <small className="text-center my-3">Powered by Resy</small>
-        <div className="d-flex justify-content-center">
-          <a
-            className="btn btn-lg btn-primary"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="resy"
-            href="https://resy.com/cities/ric/scuffletown-garden-restaurant-bar"
-          >
-            Find a Table
-          </a>
-        </div>
-      </section> */}
+      
     </Layout>
 )};
 
