@@ -28,16 +28,33 @@ $brown: #a37f43;
 $coral: #d4784d;
 $green: #5d8138;
 
-body {
+html, body {
    font-family: 'Open Sans', sans-serif;
+   height: 100%;
+}
+
+#___gatsby {
+   min-height: 100%;
+   position: relative;
 }
 
 h1 {
-   font-family: 'Acme-Gothic-Wide';
+   font-family: 'Acme-Gothic-Wide-Bold';
+   text-transform: uppercase;
+   font-size: 2.5em;
+   margin-bottom: 0.5em;
 }
 
 h2 {
    font-family: 'MrsEavBol';
+   font-size: 2em;
+   margin-bottom: 0.25em;
+}
+
+h3 {
+   font-family: 'MrsEavesRoman';
+   font-size: 1.5em;
+   margin-bottom: 0.25em;
 }
 
 footer {
@@ -56,10 +73,16 @@ footer {
 .bg-black {
    background: $black;
 }
+.bg-tan {
+   background: $tan;
+}
 
 /**** color ****/
 .offwhite {
-   color: $offwhite
+   color: $offwhite;
+}
+.darkGreen {
+   color: $darkGreen;
 }
 
 /**** Links ****/
@@ -82,6 +105,15 @@ footer {
    color: $coral;
 }
 
+/**** BUTTONS ****/
+.btn-primary {
+   background: $darkGreen;
+   color: #fff;
+}
+
+.btn-primary:hover {
+   background: $green;
+}
 
 /**** MOBILE MENU ****/
 .slide-in {
