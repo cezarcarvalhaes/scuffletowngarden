@@ -1,26 +1,39 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import Img from 'gatsby-image';
 import Layout from "../components/Layout";
-import Image from "../components/Image";
 import SEO from "../components/Seo";
+import Gallery from "../components/Gallery";
+import Map from '../components/Map';
 
 const IndexPage = (props) => {
-  const { cowScuffler, cowScufflerSmall } = props.data;
+  const { cowScuffler, cowScufflerSmall, diner } = props.data;
   return (
     <Layout>
       <SEO title="Scuffletown Garden"/>
-      <section id="header" className="d-flex flex-column flex-md-row w-100 pt-md-3 container mb-3">
-        <div className="w-25 d-none d-md-flex">
-          <Img alt="Cow Scuffler" fluid={cowScuffler.childImageSharp.fluid} className="w-100"/>
+      <section id="main-header" 
+        style={{ minHeight: 600, width: '100%', position: 'relative'}}
+        className="d-flex justify-content-center align-items-center"
+      >
+        <Img alt="Scuffletown Garden Dining Room" fluid={diner.childImageSharp.fluid} className="bg-image" style={{ position: 'absolute' }}/>
+        <div className="w-100 mt-5 text-center">
+         <h1 className="offwhite">THIS IMAGE IS FROM RICHMOND.COM!</h1> 
         </div>
-        <div className="px-3 d-md-none">
-          <Img alt="Cow Scuffler" fluid={cowScufflerSmall.childImageSharp.fluid} className="w-50 mx-auto"/>
+      </section>
+      <section id="intro" className="py-5">
+        <div className="d-flex flex-column flex-md-row w-100 pt-md-5 container mb-3">
+          <div className="w-25 d-none d-md-flex">
+            <Img alt="Cow Scuffler" fluid={cowScuffler.childImageSharp.fluid} className="w-100"/>
+          </div>
+          <div className="px-3 d-md-none">
+            <Img alt="Cow Scuffler" fluid={cowScufflerSmall.childImageSharp.fluid} className="w-50 mx-auto"/>
+          </div>
+          <div className="w-100 w-md-75 mx-auto darkGreen d-flex flex-column justify-content-center">
+            <h1 className="text-left text-md-center">Scuffletown Garden</h1>
+            <p className="px-md-5" style={{ fontSize: '1.25em' }}>Nestled in the heart of the fan, Scuffletown Garden brings sustainable and friendly New American Cuisine to the iconic neighborhood without breaking the bank.</p>
+          </div>
         </div>
-        <div className="w-100 w-md-75 mx-auto darkGreen d-flex flex-column justify-content-center px-3">
-          <h1 className="text-left text-md-center">Scuffletown Garden</h1>
-          <p className="px-md-5" style={{ fontSize: '1.25em' }}>Nestled in the heart of the fan, Scuffletown Garden brings sustainable and friendly New American Cuisine to the iconic neighborhood without breaking the bank.</p>
-          <div className="d-flex justify-content-center mt-3">
+        <div className="d-flex justify-content-center my-5">
             <a
               className="btn btn-lg btn-primary"
               target="_blank"
@@ -30,6 +43,55 @@ const IndexPage = (props) => {
             >
               Find a Table
             </a>
+          </div>
+      </section>
+      <section id="gallery" className="py-5">
+        <Gallery/>
+      </section>
+      <section id="info" className="py-5">
+        <div className="d-flex flex-column flex-md-row container">
+          <div className="d-flex flex-column darkGreen w-100 w-md-50" id="contact">
+            <h2>Contact</h2>
+            <p>
+              421 Strawberry Street
+              <br/>
+              Richmond, Virginia
+            </p>
+            <p>
+              <a 
+                href="tel:+1-912-1297"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-green"
+              >
+                (804) 912-1297
+              </a>
+            </p>
+            <p>
+              <a
+                href="mailto:scuffletowngarden@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-green"
+              >
+                scuffletowngarden@gmail.com
+              </a>
+            </p>
+            <h2>Hours</h2>
+            <p>Monday - Thursday: 11:30am - 10:00pm</p>
+            <p>Friday: 11:30am - 11:00pm</p>
+            <p>Saturday: 11:00am - 11:00pm</p>
+            <p>Friday: 10:00am - 10:00pm</p>
+          </div>
+          <div className="d-flex flex-column w-100" id="map" style={{ minHeight: 350 }}>
+            <Map onMapLoad={(map) => {
+                // eslint-disable-next-line no-unused-vars
+                const marker = new window.google.maps.Marker({
+                  position: { lat: 37.555680, lng: -77.466430 },
+                  map: map,
+                });
+              }}
+            />
           </div>
         </div>
       </section>
@@ -49,6 +111,13 @@ export const query = graphql`
       }
     }
     cowScufflerSmall: file(relativePath: { regex: "/CowScuffler-small/" }) {
+      childImageSharp {
+        fluid(maxWidth: 500, quality: 90) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    diner: file(relativePath: { regex: "/dining-room/" }) {
       childImageSharp {
         fluid(maxWidth: 500, quality: 90) {
           ...GatsbyImageSharpFluid

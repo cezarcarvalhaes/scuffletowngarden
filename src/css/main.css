@@ -49,6 +49,16 @@ footer {
   bottom: 0;
   width: 100%; }
 
+.layout-container {
+  margin: 84px auto 0 auto;
+  padding-bottom: 150px; }
+  @media (min-width: 576px) {
+    .layout-container {
+      margin-top: 110px; } }
+  @media (min-width: 760px) {
+    .layout-container {
+      margin-top: 112px; } }
+
 /**** Backgrounds ****/
 .bg-offwhite {
   background: #f4ecd8; }
@@ -58,6 +68,14 @@ footer {
 
 .bg-tan {
   background: #eece99; }
+
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  height: 100%; }
 
 /**** color ****/
 .offwhite {
@@ -73,6 +91,14 @@ footer {
 .link-black:hover {
   color: #d4784d; }
 
+.link-green {
+  color: #2b463e;
+  font-weight: 700;
+  text-decoration: underline; }
+
+.link-green:hover {
+  color: #d4784d; }
+
 .link-white {
   color: #f4ecd8; }
 
@@ -83,6 +109,13 @@ footer {
   color: #2b463e; }
 
 .link-primary:hover {
+  color: #d4784d; }
+
+.nav-link {
+  color: #2b463e;
+  font-size: 1.2em; }
+
+.nav-link:hover {
   color: #d4784d; }
 
 /**** BUTTONS ****/

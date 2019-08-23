@@ -1,9 +1,9 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
-import { Link, navigate, useStaticQuery, graphql } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import Img from "gatsby-image"
-import ReactGA from 'react-ga';
-import { FacebookIcon, InstagramIcon, TwitterIcon, HamburgerIcon, } from '../icons';
+// import ReactGA from 'react-ga';
+import { FacebookIcon, InstagramIcon, HamburgerIcon, } from '../icons';
 
 function Header(props) {
     const [mobileMenuOpen, setMenuOpen] = useState(false);
@@ -11,7 +11,7 @@ function Header(props) {
 
     const data = useStaticQuery(graphql`
     query {
-      mainLogo: file(relativePath: { eq: "logo-black-horizontal.png" }) {
+      mainLogo: file(relativePath: { eq: "logo-green-horizontal.png" }) {
         childImageSharp {
           fluid(maxWidth: 300) {
             ...GatsbyImageSharpFluid
@@ -169,19 +169,19 @@ function Header(props) {
           <div className="d-none d-md-flex flex-row justify-content-between w-100 px-3">
             <div className="d-flex flex-row w-100 align-items-center">
               <Link
-                className="link-black ml-3"
+                className="nav-link ml-3"
                 to="/menu"
               >
                 Menu
               </Link>
               <Link
-                className="link-black ml-3"
+                className="nav-link ml-3"
                 to="/reservations"
               >
                 Reservations
               </Link>
               <Link
-                className="link-black ml-3"
+                className="nav-link ml-3"
                 to="/contact"
               >
                 Contact
@@ -196,13 +196,13 @@ function Header(props) {
             </div>
             <div className="d-flex flex-row w-100 justify-content-end align-items-center">
               <Link
-                className="link-black mr-3"
+                className="nav-link mr-3"
                 to="/events"
               >
                 Events
               </Link>
               <Link
-                className="link-black mr-3"
+                className="nav-link mr-3"
                 to="/gift-cards"
               >
                 Gift Cards

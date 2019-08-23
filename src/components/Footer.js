@@ -8,7 +8,7 @@ const Footer = (props) => {
           <div className="d-flex mx-auto justify-content-center mt-3">
             <div className="mr-3" style={{fontSize: '2em'}}>
               <a 
-                className="link-black"
+                className="link-green"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="facebook"
@@ -22,7 +22,7 @@ const Footer = (props) => {
                 href="https://www.instagram.com/scuffletowngarden/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="link-black"
+                className="link-green"
                 aria-label="instagram"
               >
                 <InstagramIcon/>
@@ -30,7 +30,7 @@ const Footer = (props) => {
             </div>
           </div>
           <div
-            className="text-center my-3"
+            className="text-center my-3 darkGreen"
           >
             © {new Date().getFullYear()} Scuffletown Garden. All Rights Reserved
           </div>

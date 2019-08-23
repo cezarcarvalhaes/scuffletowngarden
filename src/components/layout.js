@@ -1,7 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import Helmet from 'react-helmet';
 import Header from "./Header";
 import Footer from './Footer';
 import '../css/main.css';
@@ -21,10 +20,7 @@ const Layout = ({ children }) => {
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div
-        style={{
-          margin: '112px auto 0 auto',
-          paddingBottom: 150,
-        }}
+        className="layout-container"
       >
         <main>{children}</main>
       </div>
