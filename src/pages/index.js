@@ -50,7 +50,7 @@ const IndexPage = (props) => {
       </section>
       <section id="info" className="py-5">
         <div className="d-flex flex-column flex-md-row container">
-          <div className="d-flex flex-column darkGreen w-100 w-md-50" id="contact">
+          <div className="d-flex flex-column darkGreen w-100 w-md-50 anchor" id="contact">
             <h2>Contact</h2>
             <p>
               421 Strawberry Street

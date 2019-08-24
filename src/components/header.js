@@ -48,7 +48,7 @@ function Header(props) {
     return (
       <div>
         <div
-          className={`container-fluid navbar-dark ${mobileMenuClass}`}
+          className={`navbar-dark ${mobileMenuClass}`}
           id="mobile-menu"
         >
           <div className="row align-items-center pt-3" id="mobile-header">
@@ -73,44 +73,47 @@ function Header(props) {
             className="my-auto d-flex flex-column justify-content-between"
             style={{ height: '90%' }}
           >
-            <div className="row">
-              <div className="col-12 pt-5 pl-3">
-                <ul
-                  className="navbar-nav mr-auto d-md-none offwhite"
-                  id="main-mobile-nav"
+            <div className="pt-5 pl-3">
+              <ul
+                className="navbar-nav mr-auto d-lg-none offwhite"
+                id="main-mobile-nav"
+              >
+                <Link
+                  to="/menu"
+                  onClick={toggleMobileMenu}
                 >
-                  <Link
-                    to="/menu"
-                  >
-                    Menu
-                  </Link>
-                  <Link
-                    to="/reservations"
-                  >
-                    Reservations
-                  </Link>
-                  <Link
-                    to="/contact"
-                  >
-                    Contact
-                  </Link>
-                  <Link
-                    to="/events"
-                  >
-                    Events
-                  </Link>
-                  <Link
-                    to="/gift-cards"
-                  >
-                    Gift Cards
-                  </Link>
-                </ul>
-              </div>
+                  Menu
+                </Link>
+                <Link
+                  to="/reservations"
+                  onClick={toggleMobileMenu}
+                >
+                  Reservations
+                </Link>
+                <a
+                  href="#contact"
+                  onClick={toggleMobileMenu}
+                >
+                  Contact
+                </a>
+                <Link
+                  to="/events"
+                  onClick={toggleMobileMenu}
+                >
+                  Events
+                </Link>
+                <Link
+                  to="/gift-cards"
+                  onClick={toggleMobileMenu}
+                >
+                  Gift Cards
+                </Link>
+              </ul>
             </div>
             <div className="row text-center align-items-center">
               <div className="col mobile-icons">
                 <ul
-                  className="d-md-none list-inline justify-content-center"
+                  className="d-lg-none list-inline justify-content-center"
                   style={{ fontSize: '2em' }}
                 >
                   <li
@@ -147,10 +150,10 @@ function Header(props) {
 
         {/* desktop nav */}
         <nav
-          className="navbar navbar-expand-md navbar-dark fixed-top bg-offwhite shadow flex-nowrap flex-md-wrap p-3"
+          className="fixed-top bg-offwhite shadow p-3 w-100"
           id="nav"
         >
-          <div className="d-flex flex-row color-black d-md-none w-100 align-items-center">
+          <div className="d-flex flex-row color-black d-lg-none w-100 align-items-center">
           <div className="w-100">                
               <Img fluid={data.logoBlack.childImageSharp.fluid}/>
             </div>
@@ -166,7 +169,7 @@ function Header(props) {
               </button>
             </div>
           </div>
-          <div className="d-none d-md-flex flex-row justify-content-between w-100 px-3">
+          <div className="d-none d-lg-flex flex-row justify-content-between w-100 px-3">
             <div className="d-flex flex-row w-100 align-items-center">
               <Link
                 className="nav-link ml-3"
@@ -180,12 +183,12 @@ function Header(props) {
               >
                 Reservations
               </Link>
-              <Link
+              <a
                 className="nav-link ml-3"
-                to="/contact"
+                href="#contact"
               >
                 Contact
-              </Link>
+              </a>
             </div>
             <div id="logo" className="w-100">
               <Link

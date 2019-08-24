@@ -28,18 +28,45 @@ html, body {
 h1 {
   font-family: 'Acme-Gothic-Wide-Bold';
   text-transform: uppercase;
-  font-size: 2.5em;
+  font-size: 2em;
+  line-height: 1.25;
   margin-bottom: 0.5em; }
+  @media (min-width: 760px) {
+    h1 {
+      font-size: 2.5em;
+      line-height: 1.125; } }
+  @media (min-width: 992px) {
+    h1 {
+      font-size: 3em;
+      line-height: 1.05; } }
 
 h2 {
   font-family: 'MrsEavBol';
-  font-size: 2em;
+  font-size: 1.625em;
+  line-height: 1.15384615;
   margin-bottom: 0.25em; }
+  @media (min-width: 760px) {
+    h2 {
+      font-size: 2em;
+      line-height: 1.25; } }
+  @media (min-width: 992px) {
+    h2 {
+      font-size: 2.25em;
+      line-height: 1.25; } }
 
 h3 {
   font-family: 'MrsEavesRoman';
-  font-size: 1.5em;
+  font-size: 1.375em;
+  line-height: 1.13636364;
   margin-bottom: 0.25em; }
+  @media (min-width: 760px) {
+    h3 {
+      font-size: 1.25em;
+      line-height: 1.25; } }
+  @media (min-width: 992px) {
+    h3 {
+      font-size: 1.75em;
+      line-height: 1.25; } }
 
 footer {
   background-color: #f4ecd8 !important;
@@ -50,14 +77,23 @@ footer {
   width: 100%; }
 
 .layout-container {
-  margin: 84px auto 0 auto;
+  margin: 78px auto 0 auto;
   padding-bottom: 150px; }
   @media (min-width: 576px) {
     .layout-container {
       margin-top: 110px; } }
   @media (min-width: 760px) {
     .layout-container {
-      margin-top: 112px; } }
+      margin-top: 150px; } }
+  @media (min-width: 992px) {
+    .layout-container {
+      margin-top: 77px; } }
+  @media (min-width: 1200px) {
+    .layout-container {
+      margin-top: 94px; } }
+  @media (min-width: 1600px) {
+    .layout-container {
+      margin-top: 116px; } }
 
 /**** Backgrounds ****/
 .bg-offwhite {
@@ -147,7 +183,6 @@ footer {
 
 #mobile-menu {
   top: 0;
-  width: 100%;
   overflow-y: auto;
   z-index: 2000;
   position: fixed;
@@ -155,10 +190,26 @@ footer {
   display: block;
   height: 100%;
   background: #000000;
-  color: #f4ecd8; }
+  color: #f4ecd8;
+  padding: 1em;
+  width: 100%; }
+  @media (min-width: 576px) {
+    #mobile-menu {
+      width: 40%; } }
 
 #main-mobile-nav a {
   color: #f4ecd8;
   margin-top: 1em;
   font-size: 1.5em;
   text-transform: uppercase; }
+
+.anchor {
+  border-top: 72px solid transparent;
+  margin-top: -72px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box; }
+  @media (max-width: 576px) {
+    .anchor {
+      border-top: 100px solid transparent;
+      margin-top: -100px; } }
