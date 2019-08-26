@@ -31,7 +31,7 @@ h1 {
   font-size: 2em;
   line-height: 1.25;
   margin-bottom: 0.5em; }
-  @media (min-width: 760px) {
+  @media (min-width: 768px) {
     h1 {
       font-size: 2.5em;
       line-height: 1.125; } }
@@ -42,10 +42,11 @@ h1 {
 
 h2 {
   font-family: 'MrsEavBol';
+  text-transform: uppercase;
   font-size: 1.625em;
   line-height: 1.15384615;
   margin-bottom: 0.25em; }
-  @media (min-width: 760px) {
+  @media (min-width: 768px) {
     h2 {
       font-size: 2em;
       line-height: 1.25; } }
@@ -56,10 +57,11 @@ h2 {
 
 h3 {
   font-family: 'MrsEavesRoman';
+  text-transform: uppercase;
   font-size: 1.375em;
   line-height: 1.13636364;
   margin-bottom: 0.25em; }
-  @media (min-width: 760px) {
+  @media (min-width: 768px) {
     h3 {
       font-size: 1.25em;
       line-height: 1.25; } }
@@ -67,6 +69,17 @@ h3 {
     h3 {
       font-size: 1.75em;
       line-height: 1.25; } }
+
+h4 {
+  font-family: 'MrsEavesRoman';
+  text-transform: uppercase;
+  font-size: 1.125em;
+  line-height: 1.1 0.11111;
+  margin-bottom: 0.25em;
+  font-weight: 700; }
+  @media (min-width: 768px) {
+    h4 {
+      line-height: 1.22222222; } }
 
 footer {
   background-color: #f4ecd8 !important;
@@ -82,7 +95,7 @@ footer {
   @media (min-width: 576px) {
     .layout-container {
       margin-top: 110px; } }
-  @media (min-width: 760px) {
+  @media (min-width: 768px) {
     .layout-container {
       margin-top: 150px; } }
   @media (min-width: 992px) {
@@ -94,6 +107,33 @@ footer {
   @media (min-width: 1600px) {
     .layout-container {
       margin-top: 116px; } }
+
+.anchor {
+  border-top: 80px solid transparent;
+  margin-top: -80px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box; }
+  @media (max-width: 576px) {
+    .anchor {
+      border-top: 116px solid transparent;
+      margin-top: -116px; } }
+  @media (min-width: 768px) {
+    .anchor {
+      border-top: 154px solid transparent;
+      margin-top: -154px; } }
+  @media (min-width: 992px) {
+    .anchor {
+      border-top: 82px solid transparent;
+      margin-top: -82px; } }
+  @media (min-width: 1200px) {
+    .anchor {
+      border-top: 98px solid transparent;
+      margin-top: -98px; } }
+  @media (min-width: 1600px) {
+    .anchor {
+      border-top: 118px solid transparent;
+      margin-top: -118px; } }
 
 /**** Backgrounds ****/
 .bg-offwhite {
@@ -119,6 +159,9 @@ footer {
 
 .darkGreen {
   color: #2b463e; }
+
+.brown {
+  color: #a37f43; }
 
 /**** Links ****/
 .link-black {
@@ -162,6 +205,23 @@ footer {
 .btn-primary:hover {
   background: #5d8138; }
 
+.menu-btn {
+  color: #2b463e;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  background: none;
+  border: none; }
+
+.menu-btn:focus {
+  outline: none; }
+
+.menu-btn:hover {
+  color: #d4784d;
+  border-bottom-color: #d4784d; }
+
+.selected-menu {
+  border-bottom: solid 2px #2b463e; }
+
 /**** MOBILE MENU ****/
 .slide-in {
   animation: slide-in 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) forwards; }
@@ -203,13 +263,57 @@ footer {
   font-size: 1.5em;
   text-transform: uppercase; }
 
-.anchor {
-  border-top: 72px solid transparent;
-  margin-top: -72px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box; }
-  @media (max-width: 576px) {
-    .anchor {
-      border-top: 100px solid transparent;
-      margin-top: -100px; } }
+#main-mobile-nav button {
+  color: #f4ecd8;
+  margin-top: 1em;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  padding: 0;
+  text-align: left; }
+
+/**** RESPONSIVE BREAKPOINTS ****/
+@media (min-width: 576px) {
+  .w-sm-25 {
+    width: 25% !important; }
+  .w-sm-50 {
+    width: 50% !important; }
+  .w-sm-75 {
+    width: 75% !important; }
+  .w-sm-100 {
+    width: 100% !important; } }
+
+@media (min-width: 768px) {
+  .w-md-25 {
+    width: 25% !important; }
+  .w-md-50 {
+    width: 50% !important; }
+  .w-md-75 {
+    width: 75% !important; }
+  .w-md-100 {
+    width: 100% !important; } }
+
+@media (min-width: 992px) {
+  .w-lg-25 {
+    width: 25% !important; }
+  .w-lg-50 {
+    width: 50% !important; }
+  .w-lg-75 {
+    width: 75% !important; }
+  .w-lg-100 {
+    width: 100% !important; } }
+
+@media (min-width: 1200px) {
+  .w-xl-25 {
+    width: 25% !important; }
+  .w-xl-50 {
+    width: 50% !important; }
+  .w-xl-75 {
+    width: 75% !important; }
+  .w-xl-100 {
+    width: 100% !important; }
+  .w-xl-60px {
+    width: 60px !important; }
+  .w-xl-80px {
+    width: 80px !important; }
+  .w-xl-100px {
+    width: 100px !important; } }

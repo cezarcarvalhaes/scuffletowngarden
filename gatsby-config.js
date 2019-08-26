@@ -30,5 +30,41 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    {
+      resolve: 'gatsby-source-google-sheets',
+      options: {
+          spreadsheetId: '1W7JMx_N41_9YXNldcW0JH2YCR4wK4vAIZlCaAMeS5TQ',
+          worksheetTitle: 'Dinner',
+          // eslint-disable-next-line global-require
+          credentials: require('./client-secret.json'),
+      },
+    },
+    {
+      resolve: 'gatsby-source-google-sheets',
+      options: {
+          spreadsheetId: '1W7JMx_N41_9YXNldcW0JH2YCR4wK4vAIZlCaAMeS5TQ',
+          worksheetTitle: 'Lunch',
+          // eslint-disable-next-line global-require
+          credentials: require('./client-secret.json'),
+      },
+    },
+    {
+      resolve: 'gatsby-source-google-sheets',
+      options: {
+          spreadsheetId: '1W7JMx_N41_9YXNldcW0JH2YCR4wK4vAIZlCaAMeS5TQ',
+          worksheetTitle: 'Brunch',
+          // eslint-disable-next-line global-require
+          credentials: require('./client-secret.json'),
+      },
+    },
+    {
+      resolve: 'gatsby-source-google-sheets',
+      options: {
+          spreadsheetId: '1W7JMx_N41_9YXNldcW0JH2YCR4wK4vAIZlCaAMeS5TQ',
+          worksheetTitle: 'Cocktails',
+          // eslint-disable-next-line global-require
+          credentials: require('./client-secret.json'),
+      },
+    },
   ],
 }
