@@ -32,8 +32,6 @@ function Menu(props) {
       allGoogleSheetCocktailsRow: {nodes: cocktails},
    } = props.data;
 
-   console.log(brunch);
-
    const renderCocktails = () => (
       <div className="d-flex flex-column flex-md-row w-100 mb-3 darkGreen">
          <div className="w-100">

@@ -11,12 +11,12 @@
    src: url("../fonts/Acme-Gothic-Wide.otf");
 }
 @font-face {
-   font-family: "MrsEavBol";
-   src: url("../fonts/MrsEavBol");
+   font-family: "MrsEavesBold";
+   src: url("../fonts/MrsEavesBold.ttf");
 }
 @font-face {
    font-family: "MrsEavesRoman";
-   src: url("../fonts/MrsEavesRoman");
+   src: url("../fonts/MrsEavesRoman.ttf");
 }
 
 /**** Color Pallette ****/
@@ -55,7 +55,7 @@ h1 {
 }
 
 h2 {
-   font-family: 'MrsEavBol';
+   font-family: 'MrsEavesBold';
    text-transform: uppercase;
    font-size: 1.625em;
    line-height: 1.15384615;
