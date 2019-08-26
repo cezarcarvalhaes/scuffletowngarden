@@ -5,7 +5,6 @@ const MAPS_API_KEY = process.env.GATSBY_MAPS_API_KEY
 
 const Map = (props) => {
    const onScriptLoad = () => {
-      console.log('loaded')
       const map = new window.google.maps.Map(
          document.getElementById('map'),
          {
