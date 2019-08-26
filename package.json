@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "dot-env": "^0.0.1",
     "gatsby": "^2.13.62",
     "gatsby-image": "^2.2.8",
     "gatsby-plugin-manifest": "^2.2.5",
@@ -14,6 +15,7 @@
     "gatsby-source-filesystem": "^2.1.9",
     "gatsby-source-google-sheets": "^1.1.1",
     "gatsby-transformer-sharp": "^2.2.6",
+    "gh-pages": "^2.1.1",
     "node-sass": "^4.12.0",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
@@ -36,7 +38,8 @@
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "build-css": "node-sass src/scss/ -o src/css/",
-    "watch-css": "npm run build-css && node-sass src/scss/ -o src/css/ --watch --recursive"
+    "watch-css": "npm run build-css && node-sass src/scss/ -o src/css/ --watch --recursive",
+    "deploy-staging": "ACTIVE_ENV=staging && gatsby build --prefix-paths && gh-pages -d public"
   },
   "repository": {
     "type": "git",
