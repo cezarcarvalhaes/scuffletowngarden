@@ -87,19 +87,22 @@ function Header(props) {
               >
                 Menu
               </Link>
-              <Link
-                to="/reservations"
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="resy"
                 onClick={toggleMobileMenu}
+                href="https://resy.com/cities/ric/scuffletown-garden-restaurant-bar"
               >
                 Reservations
-              </Link>
+              </a>
               <button
                 className="btn btn-link"
                 onClick={() => {navigate('/#contact'); toggleMobileMenu()}}
               >
                 Contact
               </button>
-              <Link
+              {/* <Link
                 to="/events"
                 onClick={toggleMobileMenu}
               >
@@ -110,7 +113,7 @@ function Header(props) {
                 onClick={toggleMobileMenu}
               >
                 Gift Cards
-              </Link>
+              </Link> */}
             </ul>
           </div>
           <div className="row text-center align-items-center">
@@ -180,18 +183,15 @@ function Header(props) {
             >
               Menu
             </Link>
-            <Link
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
               className="nav-link ml-3"
-              to="/reservations"
+              aria-label="resy"
+              href="https://resy.com/cities/ric/scuffletown-garden-restaurant-bar"
             >
               Reservations
-            </Link>
-            <button
-              className="nav-link ml-3 btn btn-link"
-              onClick={() => {navigate('/#contact')}}
-            >
-              Contact
-            </button>
+            </a>
           </div>
           <div id="logo" className="w-100">
             <Link
@@ -201,7 +201,13 @@ function Header(props) {
             </Link>
           </div>
           <div className="d-flex flex-row w-100 justify-content-end align-items-center">
-            <Link
+            <button
+              className="nav-link ml-3 btn btn-link"
+              onClick={() => {navigate('/#contact')}}
+            >
+              Contact
+            </button>
+            {/* <Link
               className="nav-link mr-3"
               to="/events"
             >
@@ -212,7 +218,7 @@ function Header(props) {
               to="/gift-cards"
             >
               Gift Cards
-            </Link>
+            </Link> */}
           </div>
         </div>
       </nav>

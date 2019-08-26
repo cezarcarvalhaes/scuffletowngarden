@@ -100,7 +100,7 @@ function Menu(props) {
                {
                   brunch.filter((item) => item.category === CATEGORIES.SANDWICHES)
                   .map((menuItem, index) => (
-                     <div key={`brunch-sammie-${index}`} className="w-100 w-md-50 mb-3 darkGreen">
+                     <div key={`brunch-sammie-${index}`} className="w-100 w-md-50 mb-3 darkGreen pr-md-3">
                         <div className="d-flex">
                            <h4>{`${menuItem.name} — $${menuItem.price}`}</h4>
                         </div>
@@ -117,7 +117,7 @@ function Menu(props) {
                {
                   brunch.filter((item) => item.category === CATEGORIES.MAINS)
                   .map((menuItem, index) => (
-                     <div key={`brunch-sammie-${index}`} className="w-100 w-md-50 mb-3 darkGreen">
+                     <div key={`brunch-sammie-${index}`} className="w-100 w-md-50 mb-3 darkGreen pr-md-3">
                         <div className="d-flex">
                            <h4>{`${menuItem.name} — $${menuItem.price}`}</h4>
                         </div>
@@ -134,7 +134,7 @@ function Menu(props) {
                {
                   brunch.filter((item) => item.category === CATEGORIES.ADD_ONS)
                   .map((menuItem, index) => (
-                     <div key={`brunch-addons-${index}`} className="w-100 w-md-50 mb-3 darkGreen">
+                     <div key={`brunch-addons-${index}`} className="w-100 w-md-50 mb-3 darkGreen pr-md-3">
                         <div className="d-flex">
                            <h4>{`${menuItem.name} — $4`}</h4>
                         </div>
@@ -151,9 +151,9 @@ function Menu(props) {
                {brunch.find((item) => item.category === CATEGORIES.DESSERTS)
                ? brunch.filter((item) => item.category === CATEGORIES.DESSERTS)
                   .map((menuItem, index) => (
-                     <div key={`brunch-desserts-${index}`} className="w-100 w-md-50 mb-3 darkGreen">
+                     <div key={`brunch-desserts-${index}`} className="w-100 w-md-50 mb-3 darkGreen pr-md-3">
                         <div className="d-flex">
-                           <h4>{menuItem.name}</h4>
+                           <h4>{`${menuItem.name} — $${menuItem.price}`}</h4>
                         </div>
                         <div>{menuItem.description}</div>
                         <small>{menuItem.code}</small>
@@ -178,7 +178,7 @@ function Menu(props) {
                {
                   lunch.filter((item) => item.category === CATEGORIES.STARTERS)
                   .map((menuItem, index) => (
-                     <div key={`lunch-starter-${index}`} className="w-100 w-md-50 mb-3 darkGreen">
+                     <div key={`lunch-starter-${index}`} className="w-100 w-md-50 mb-3 darkGreen pr-md-3">
                         <div className="d-flex">
                            <h4>{`${menuItem.name} — $${menuItem.price}`}</h4>
                         </div>
@@ -195,7 +195,7 @@ function Menu(props) {
                {
                   lunch.filter((item) => item.category === CATEGORIES.SANDWICHES)
                   .map((menuItem, index) => (
-                     <div key={`lunch-sammie-${index}`} className="w-100 w-md-50 mb-3 darkGreen">
+                     <div key={`lunch-sammie-${index}`} className="w-100 w-md-50 mb-3 darkGreen pr-md-3">
                         <div className="d-flex">
                            <h4>{`${menuItem.name} — $${menuItem.price}`}</h4>
                         </div>
@@ -212,7 +212,7 @@ function Menu(props) {
                {
                   lunch.filter((item) => item.category === CATEGORIES.SIDES)
                   .map((menuItem, index) => (
-                     <div key={`lunch-sides-${index}`} className="w-100 w-md-50 mb-3 darkGreen">
+                     <div key={`lunch-sides-${index}`} className="w-100 w-md-50 mb-3 darkGreen pr-md-3">
                         <div className="d-flex">
                            <h4>{menuItem.name}</h4>
                         </div>
@@ -229,9 +229,9 @@ function Menu(props) {
                {lunch.find((item) => item.category === CATEGORIES.DESSERTS)
                ? lunch.filter((item) => item.category === CATEGORIES.DESSERTS)
                   .map((menuItem, index) => (
-                     <div key={`lunch-desserts-${index}`} className="w-100 w-md-50 mb-3 darkGreen">
+                     <div key={`lunch-desserts-${index}`} className="w-100 w-md-50 mb-3 darkGreen pr-md-3">
                         <div className="d-flex">
-                           <h4>{menuItem.name}</h4>
+                           <h4>{`${menuItem.name} — $${menuItem.price}`}</h4>
                         </div>
                         <div>{menuItem.description}</div>
                         <small>{menuItem.code}</small>
@@ -256,7 +256,7 @@ function Menu(props) {
                {
                   dinner.filter((item) => item.category === CATEGORIES.STARTERS)
                   .map((menuItem, index) => (
-                     <div key={`dinner-starter-${index}`} className="w-100 w-md-50 mb-3 darkGreen">
+                     <div key={`dinner-starter-${index}`} className="w-100 w-md-50 mb-3 darkGreen pr-md-3">
                         <div className="d-flex">
                            <h4>{`${menuItem.name} — $${menuItem.price}`}</h4>
                         </div>
@@ -273,7 +273,7 @@ function Menu(props) {
                {
                   dinner.filter((item) => item.category === CATEGORIES.VEGGIES)
                   .map((menuItem, index) => (
-                     <div key={`dinner-veg-${index}`} className="w-100 w-md-50 mb-3 darkGreen">
+                     <div key={`dinner-veg-${index}`} className="w-100 w-md-50 mb-3 darkGreen pr-md-3">
                         <div className="d-flex">
                            <h4>{`${menuItem.name} — $${menuItem.price}`}</h4>
                         </div>
@@ -290,7 +290,7 @@ function Menu(props) {
                {
                   dinner.filter((item) => item.category === CATEGORIES.STARCHES)
                   .map((menuItem, index) => (
-                     <div key={`dinner-starch-${index}`} className="w-100 w-md-50 mb-3 darkGreen">
+                     <div key={`dinner-starch-${index}`} className="w-100 w-md-50 mb-3 darkGreen pr-md-3">
                         <div className="d-flex">
                            <h4>{`${menuItem.name} — $${menuItem.price}`}</h4>
                         </div>
@@ -307,7 +307,7 @@ function Menu(props) {
                {
                   dinner.filter((item) => item.category === CATEGORIES.PROTEINS)
                   .map((menuItem, index) => (
-                     <div key={`dinner-protein-${index}`} className="w-100 w-md-50 mb-3 darkGreen">
+                     <div key={`dinner-protein-${index}`} className="w-100 w-md-50 mb-3 darkGreen pr-md-3">
                         <div className="d-flex">
                            <h4>
                            {
@@ -328,9 +328,9 @@ function Menu(props) {
                {dinner.find((item) => item.category === CATEGORIES.DESSERTS)
                ? dinner.filter((item) => item.category === CATEGORIES.DESSERTS)
                   .map((menuItem, index) => (
-                     <div key={`dinner-desserts-${index}`} className="w-100 w-md-50 mb-3 darkGreen">
+                     <div key={`dinner-desserts-${index}`} className="w-100 w-md-50 mb-3 darkGreen pr-md-3">
                         <div className="d-flex">
-                           <h4>{menuItem.name}</h4>
+                           <h4>{`${menuItem.name} — $${menuItem.price}`}</h4>
                         </div>
                         <div>{menuItem.description}</div>
                         <small>{menuItem.code}</small>
