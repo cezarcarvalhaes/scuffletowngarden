@@ -1,17 +1,28 @@
 const path = require('path');
 
-let activeEnv = process.env.ACTIVE_ENV || process.env.NODE_ENV || 'development';
+let activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development';
 console.log(`Using environment config: '${activeEnv}'`);
 
 require('dotenv').config({
   path: `.env.${activeEnv}`,
 });
 
+let url = 'http://localhost:8000';
+
+if (activeEnv === 'staging') {
+  url = 'https://cezarcarvalhaes.github.io/scuffletowngarden/';
+} else if (activeEnv === 'production') {
+  url = 'https://scuffletowngarden.com';
+}
+
+console.log(url)
+
 module.exports = {
   siteMetadata: {
     title: `Scuffletown Garden`,
-    description: ``,
+    description: `Scuffletown Garden brings sustainable and friendly New American Cuisine to the iconic fan neighborhood without breaking the bank. With ample parking and open seven days a week, serving weekday lunch, weekend brunch, and dinner daily. Our happy hour is 4:30-6:30, Monday-Friday.`,
     author: `Cezar Carvalhaes`,
+    siteUrl: url,
   },
   pathPrefix: "/scuffletowngarden",
   plugins: [

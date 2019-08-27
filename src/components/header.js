@@ -3,8 +3,14 @@ import React, { useState } from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import Img from "gatsby-image"
 import { navigate } from '@reach/router';
-// import ReactGA from 'react-ga';
+import ReactGA from 'react-ga';
 import { FacebookIcon, InstagramIcon, HamburgerIcon, } from '../icons';
+
+let contactURL = '/#contact';
+
+if (typeof window !== 'undefined' && window.location.host === 'cezarcarvalhaes.github.io') {
+  contactURL= '/scuffletowngarden/#contact';
+}
 
 function Header(props) {
     const [mobileMenuOpen, setMenuOpen] = useState(false);
@@ -19,7 +25,7 @@ function Header(props) {
           }
         }
       }
-      logoBlack: file(relativePath: { eq: "logo-black.png" }) {
+      logoGreen: file(relativePath: { eq: "logo-green.png" }) {
         childImageSharp {
           fluid(maxWidth: 300) {
             ...GatsbyImageSharpFluid
@@ -91,14 +97,20 @@ function Header(props) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="resy"
-                onClick={toggleMobileMenu}
+                onClick={() => {
+                  ReactGA.event({
+                    category: 'resy',
+                    action: 'click',
+                    label: 'reserve-table',
+                  }); 
+                toggleMobileMenu()}}
                 href="https://resy.com/cities/ric/scuffletown-garden-restaurant-bar"
               >
                 Reservations
               </a>
               <button
                 className="btn btn-link"
-                onClick={() => {navigate('/#contact'); toggleMobileMenu()}}
+                onClick={() => {navigate(contactURL); toggleMobileMenu()}}
               >
                 Contact
               </button>
@@ -161,7 +173,7 @@ function Header(props) {
       >
         <div className="d-flex flex-row color-black d-lg-none w-100 align-items-center">
         <div className="w-100">                
-            <Img fluid={data.logoBlack.childImageSharp.fluid}/>
+            <Img fluid={data.logoGreen.childImageSharp.fluid}/>
           </div>
           <div className="d-flex justify-content-end w-50">
             <button
@@ -170,6 +182,7 @@ function Header(props) {
               aria-expanded="false"
               aria-label="Toggle navigation"
               onClick={() => toggleMobileMenu()}
+              className="darkGreen"
             >
               <HamburgerIcon/>
             </button>
@@ -188,6 +201,13 @@ function Header(props) {
               rel="noopener noreferrer"
               className="nav-link ml-3"
               aria-label="resy"
+              onClick={() => {
+                ReactGA.event({
+                  category: 'resy',
+                  action: 'click',
+                  label: 'reserve-table',
+                });
+              }}
               href="https://resy.com/cities/ric/scuffletown-garden-restaurant-bar"
             >
               Reservations
@@ -203,7 +223,7 @@ function Header(props) {
           <div className="d-flex flex-row w-100 justify-content-end align-items-center">
             <button
               className="nav-link ml-3 btn btn-link"
-              onClick={() => {navigate('/#contact')}}
+              onClick={() => {navigate(contactURL)}}
             >
               Contact
             </button>

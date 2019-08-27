@@ -5,13 +5,13 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React, { useEffect } from "react";
+import Helmet from "react-helmet";
+import { useStaticQuery, graphql } from "gatsby";
+import ReactGA from 'react-ga';
 
-function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
+function SEO({ description, lang, meta, title, image }) {
+  const { site, defaultImage } = useStaticQuery(
     graphql`
       query {
         site {
@@ -19,13 +19,35 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
+            siteUrl
+          }
+        }
+        defaultImage: file(relativePath: { regex: "/entrance-view/" }) {
+          childImageSharp {
+            resize(width: 1200) {
+              src
+              height
+              width
+            }
           }
         }
       }
     `
   )
+  
+  useEffect(() => {
+    console.log('init')
+    ReactGA.initialize(process.env.GATSBY_GA_CODE);
+  }, []);
 
   const metaDescription = description || site.siteMetadata.description
+  const metaImage = image || defaultImage.childImageSharp.resize
+  let path; 
+  if (typeof window !== 'undefined') {
+    path = window.location.pathname;
+  }
+  ReactGA.initialize(process.env.GATSBY_GA_CODE);
+  ReactGA.pageview(path);
 
   return (
     <Helmet
@@ -52,6 +74,18 @@ function SEO({ description, lang, meta, title }) {
           content: `website`,
         },
         {
+          property: 'og:image',
+          content: `${site.siteMetadata.siteUrl}${metaImage.src}`,
+        },
+        {
+          property: 'og:image:width',
+          content: metaImage.width,
+        },
+        {
+          property: 'og:image:height',
+          content: metaImage.height,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
@@ -76,13 +110,6 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
-}
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
 }
 
 export default SEO

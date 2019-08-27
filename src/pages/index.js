@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import ReactGA from 'react-ga';
 import Img from 'gatsby-image';
 import Layout from "../components/Layout";
 import SEO from "../components/Seo";
@@ -16,9 +17,6 @@ const IndexPage = (props) => {
         className="d-flex justify-content-center align-items-center"
       >
         <Img alt="Scuffletown Garden Dining Room" fluid={diner.childImageSharp.fluid} className="bg-image" style={{ position: 'absolute' }}/>
-        <div className="w-100 mt-5 text-center">
-         <h1 className="offwhite">THIS IMAGE IS FROM RICHMOND.COM!</h1> 
-        </div>
       </section>
       <section id="intro" className="py-5">
         <div className="d-flex flex-column flex-md-row w-100 pt-md-5 container mb-3">
@@ -40,6 +38,13 @@ const IndexPage = (props) => {
               rel="noopener noreferrer"
               aria-label="resy"
               href="https://resy.com/cities/ric/scuffletown-garden-restaurant-bar"
+              onClick={() => {
+                ReactGA.event({
+                  category: 'resy',
+                  action: 'click',
+                  label: 'reserve-table',
+                });
+              }}
             >
               Find a Table
             </a>
@@ -81,7 +86,7 @@ const IndexPage = (props) => {
             <p>Monday - Thursday: 11:30am - 10:00pm</p>
             <p>Friday: 11:30am - 11:00pm</p>
             <p>Saturday: 11:00am - 11:00pm</p>
-            <p>Friday: 10:00am - 10:00pm</p>
+            <p>Sunday: 10:00am - 10:00pm</p>
           </div>
           <div className="d-flex flex-column w-100" id="map" style={{ minHeight: 350 }}>
             <Map onMapLoad={(map) => {
@@ -117,7 +122,7 @@ export const query = graphql`
         }
       }
     }
-    diner: file(relativePath: { regex: "/dining-room/" }) {
+    diner: file(relativePath: { regex: "/entrance-view/" }) {
       childImageSharp {
         fluid(maxWidth: 500, quality: 90) {
           ...GatsbyImageSharpFluid
