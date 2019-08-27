@@ -63,7 +63,8 @@ function Header(props) {
         <div className="row align-items-center pt-3" id="mobile-header">
           <div className="col home pl-3">
             <Link to="/">
-              <Img 
+              <Img
+                alt='Home'
                 className="w-25"
                 fluid={data.secondaryOffWhite.childImageSharp.fluid}/>
             </Link>
@@ -87,33 +88,39 @@ function Header(props) {
               className="navbar-nav mr-auto d-lg-none offwhite"
               id="main-mobile-nav"
             >
-              <Link
-                to="/menu"
-                onClick={toggleMobileMenu}
-              >
-                Menu
-              </Link>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="resy"
-                onClick={() => {
-                  ReactGA.event({
-                    category: 'resy',
-                    action: 'click',
-                    label: 'reserve-table',
-                  }); 
-                toggleMobileMenu()}}
-                href="https://resy.com/cities/ric/scuffletown-garden-restaurant-bar"
-              >
-                Reservations
-              </a>
-              <button
-                className="btn btn-link"
-                onClick={() => {navigate(contactURL); toggleMobileMenu()}}
-              >
-                Contact
-              </button>
+              <li>
+                <Link
+                  to="/menu"
+                  onClick={toggleMobileMenu}
+                >
+                  Menu
+                </Link>
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="resy"
+                  onClick={() => {
+                    ReactGA.event({
+                      category: 'resy',
+                      action: 'click',
+                      label: 'reserve-table',
+                    }); 
+                  toggleMobileMenu()}}
+                  href="https://resy.com/cities/ric/scuffletown-garden-restaurant-bar"
+                >
+                  Reservations
+                </a>
+              </li>
+              <li>
+                <button
+                  className="btn btn-link"
+                  onClick={() => {navigate(contactURL); toggleMobileMenu()}}
+                >
+                  Contact
+                </button>
+              </li>
               {/* <Link
                 to="/events"
                 onClick={toggleMobileMenu}
@@ -178,8 +185,6 @@ function Header(props) {
           <div className="d-flex justify-content-end w-50">
             <button
               style={{ background: 'none', border: 'none', fontSize: '1.5em' }}
-              aria-controls="navbarCollapse"
-              aria-expanded="false"
               aria-label="Toggle navigation"
               onClick={() => toggleMobileMenu()}
               className="darkGreen"
