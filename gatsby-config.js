@@ -24,7 +24,7 @@ module.exports = {
     author: `Cezar Carvalhaes`,
     siteUrl: url,
   },
-  pathPrefix: "/scuffletowngarden",
+  pathPrefix: activeEnv === 'production' ? '/' : '/scuffletowngarden',
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
