@@ -124,7 +124,7 @@ export const query = graphql`
     }
     diner: file(relativePath: { regex: "/entrance-view/" }) {
       childImageSharp {
-        fluid(maxWidth: 500, quality: 90) {
+        fluid(maxWidth: 800, quality: 80) {
           ...GatsbyImageSharpFluid
         }
       }

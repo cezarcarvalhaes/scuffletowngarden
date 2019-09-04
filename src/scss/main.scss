@@ -312,11 +312,14 @@ footer {
 
  #main-mobile-nav button {
    color: $offwhite;
-   margin-top: 1em;
    font-size: 1.5em;
    text-transform: uppercase;
    padding: 0;
    text-align: left;
+ }
+
+ #main-mobile-nav li {
+    margin-top: .5em;
  }
 
  

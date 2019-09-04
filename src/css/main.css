@@ -2,19 +2,23 @@
 @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css");
 @font-face {
   font-family: "Acme-Gothic-Wide-Bold";
-  src: url("../fonts/Acme-Gothic-Wide-Bold.otf"); }
+  src: url("../fonts/Acme-Gothic-Wide-Bold.otf");
+  font-display: swap; }
 
 @font-face {
   font-family: "Acme-Gothic-Wide";
-  src: url("../fonts/Acme-Gothic-Wide.otf"); }
+  src: url("../fonts/Acme-Gothic-Wide.otf");
+  font-display: swap; }
 
 @font-face {
   font-family: "MrsEavesBold";
-  src: url("../fonts/MrsEavesBold.ttf"); }
+  src: url("../fonts/MrsEavesBold.ttf");
+  font-display: swap; }
 
 @font-face {
   font-family: "MrsEavesRoman";
-  src: url("../fonts/MrsEavesRoman.ttf"); }
+  src: url("../fonts/MrsEavesRoman.ttf");
+  font-display: swap; }
 
 /**** Color Pallette ****/
 html, body {
@@ -265,11 +269,13 @@ footer {
 
 #main-mobile-nav button {
   color: #f4ecd8;
-  margin-top: 1em;
   font-size: 1.5em;
   text-transform: uppercase;
   padding: 0;
   text-align: left; }
+
+#main-mobile-nav li {
+  margin-top: .5em; }
 
 /**** RESPONSIVE BREAKPOINTS ****/
 @media (min-width: 576px) {
